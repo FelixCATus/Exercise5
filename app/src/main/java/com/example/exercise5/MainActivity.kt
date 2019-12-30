@@ -25,13 +25,31 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
 
 
+        var liked = false
         imageViewLike.setOnClickListener {
-            countViewModel.countLike++
+            if(liked){
+                imageViewLike.setImageResource(R.drawable.ic_thumb_up_black_24dp)
+                countViewModel.countLike--
+                liked = false
+            }else{
+                imageViewLike.setImageResource(R.drawable.ic_thumb_up_blue_24dp)
+                countViewModel.countLike++
+                liked = true
+            }
             textViewLike.text = countViewModel.countLike.toString()
         }
 
+        var disliked = false
         imageViewDislike.setOnClickListener {
-            countViewModel.countDislike++
+            if(disliked){
+                imageViewDislike.setImageResource(R.drawable.ic_thumb_down_black_24dp)
+                countViewModel.countDislike--
+                disliked = false
+            }else{
+                imageViewDislike.setImageResource(R.drawable.ic_thumb_down_blue_24dp)
+                countViewModel.countDislike++
+                disliked = true
+            }
             textViewDislike.text = countViewModel.countDislike.toString()
         }
     }

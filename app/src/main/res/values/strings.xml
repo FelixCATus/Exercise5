@@ -2,4 +2,5 @@
     <string name="app_name">Exercise5</string>
     <string name="like">Like</string>
     <string name="dislike">Dislike</string>
+    <string name="countPlaceholder">#</string>
 </resources>
